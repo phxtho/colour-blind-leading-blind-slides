@@ -1,0 +1,11 @@
+{
+  "name": "colour-blind-leading-the-blind",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "git@github.com:phxtho/colour-blind-leading-blind-slides.git",
+  "author": "phxtho <phathopukwana@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}

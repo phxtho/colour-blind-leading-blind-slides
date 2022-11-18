@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>🌈Colour</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section><h2>The Colour Bilnd Leading the Blind</h2></section>
+        <section>
+          <ul>
+            <li>How we see colour</li>
+            <li>Modelling colour digitally</li>
+            <li>Modelling human colour perception</li>
+            <li>Demo</li>
+          </ul>
+        </section>
+        <section>
+          <figure>
+            <img src="images/normalised-cone-response.svg" />
+          </figure>
+          <ul>
+            <li>Trichromatic colour</li>
+            <li>Colour Blindness = Dichromacy</li>
+            <li>Monochromacy</li>
+          </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>3 cones respond to different wavelenghts</li>
+              <li>protonopia = L, deutanopia = M, tritonopia = S</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <figure
+            style="
+              background-color: whitesmoke;
+              height: 300px;
+              aspect-ratio: 16 / 9;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Dichromatic_color_vision.svg/2560px-Dichromatic_color_vision.svg.png"
+              alt="dichromatic vision"
+            />
+          </figure>
+          <ul>
+            <li>Trichromat ~1million colours</li>
+            <li>Dichromat ~10k colours</li>
+          </ul>
+        </section>
+        <section><h2>Colour Spaces</h2></section>
+        <section>
+          <section>
+            RGB
+            <iframe
+              width="100%"
+              height="576"
+              frameborder="0"
+              src="https://observablehq.com/embed/@phxtho/hsv-values-in-rgb-space?cells=rgbCube"
+            ></iframe>
+          </section>
+          <section>
+            <h2>Problems with RGB</h2>
+          </section>
+          <section>
+            <ul>
+              <li>Distance in RGB space is not perceptually uniform</li>
+              <li>Cannot represent all colours humans can see</li>
+            </ul>
+          </section>
+          <section>
+            <figure>
+              <img src="images/CIExy1931_srgb_gamut.png" />
+            </figure>
+          </section>
+          <section>
+            HSV
+            <figure
+              style="
+                aspect-ratio: 1;
+                height: 600px;
+                margin-right: auto;
+                margin-left: auto;
+              "
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/33/HSV_color_solid_cylinder_saturation_gray.png?20100323050832"
+              />
+            </figure>
+          </section>
+        </section>
+        <section>
+          <h2>Perceptually uniform colour spaces</h2>
+          <span style="font-size: xsmall">
+            a given numerical change corresponds to a similar perceived change
+            in color</span
+          >
+          <aside class="notes">
+            <p>
+              A color space is perceptually uniform if a change of length in any
+              direction X of the color space is perceived by a human as the same
+              change.
+            </p>
+          </aside>
+        </section>
+        <section>
+          <section>
+            Munsell System
+            <iframe
+              width="100%"
+              height="600"
+              frameborder="0"
+              src="https://observablehq.com/embed/@jrus/munsell-spin?cells=spinning_picture"
+            ></iframe>
+          </section>
+          <section>
+            CIELAB
+            <iframe
+              width="100%"
+              height="600"
+              frameborder="0"
+              src="https://observablehq.com/embed/@phxtho/the-shapes-of-all-colors?cells=cielabPoisson"
+            ></iframe>
+          </section>
+        </section>
+        <section>
+          <a target="”_blank”" href="https://phxtho.github.io/perspectra/"
+            >DEMO</a
+          >
+        </section>
+        <section>
+          <ul>
+            <li>Camera sampling from RGB</li>
+            <li>Chromatic Adaption</li>
+          </ul>
+        </section>
+        <section>
+          <section>Bonus Content</section>
+
+          <section>
+            RGB approximation of brightness
+            <figure style="height: 500px">
+              <img
+                src="https://www.nbdtech.com/images/blog/20080427/AllColors.png"
+                alt=""
+              />
+              <figcaption>
+                brightness = sqrt( .241 R2 + .691 G2 + .068 B2 )
+              </figcaption>
+            </figure>
+          </section>
+
+          <section>
+            Gradients
+            <iframe
+              width="100%"
+              height="650"
+              frameborder="0"
+              src="https://observablehq.com/embed/@mjbo/perceptually-uniform-color-models?cells=spaceComparison"
+            ></iframe>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
